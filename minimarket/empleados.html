@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/estiloMenu.css">
+    <title>Document</title>
+</head>
+<body>
+    <header class="header">
+        <h1 class="header__titulo">CAMVELS</h1>
+    </header>
+    <main class="presentacion">
+        <section class="presentacion__menu">
+            <div class="presentacion__menu__paginas">
+                <a class="presentacion__menu__paginas__link" href="productos.html" >Productos</a>
+                <a class="presentacion__menu__paginas__link" href="ventas.html">Ventas</a>
+                <a class="presentacion__menu__paginas__link" href="compras.html">Compras</a>
+                <a class="presentacion__menu__paginas__link" href="empleados.html">Empleados</a>
+                <a class="presentacion__menu__paginas__link" href="proveedores.html">Proveedores</a>
+                <a class="presentacion__menu__paginas__link" href="reportes.html">Reportes</a>
+            </div>
+        </section>
+        <section class="presentacion__contenido">
+            <h2 class="presentacion__contenido__titulo">Lista de empleados</h2>
+            <div class="presentacion__contenido__cabecera">
+                <a class="presentacion__contenido__cabecera__link" href="empleadoDao.html">Nuevo Empleado</a>
+                <input type="text" class="presentacion__contenido__cabecera__buscador" placeholder="Buscar empleado">
+            </div>    
+            <table class="presentacion__contenido__tabla">
+                <thead class="presentacion__contenido__tabla__encabezado">
+                    <tr class="presentacion__contenido__tabla__encabezado__fila">
+                        <th>Nombre</th>
+                        <th>Dni</th>
+                        <th>Rol</th>
+                        <th>Acciones</th>
+                        <th>Imagen</th>
+                    </tr>
+                </thead>
+                <tbody class="presentacion__contenido__tabla__cuerpo">
+                    <tr class="presentacion__contenido__tabla__cuerpo__fila">
+                        <td>Nancy Velasquez</td>
+                        <td>84894148</td>
+                        <td>Administrador</td>
+                        <td class="presentacion__contenido__tabla__cuerpo__fila__acciones">
+                            <a class="presentacion__contenido__tabla__cuerpo__fila__acciones__boton" href="empleadoDao.html">Editar</a>
+                        </td>
+                        <td><img class="presentacion__contenido__tabla__cuerpo__fila__imagen" src="images/nombre"></td>
+                    </tr>
+                    <tr class="presentacion__contenido__tabla__cuerpo__fila">
+                        <td>Jose Rodriguez</td>
+                        <td>18941354</td>
+                        <td>Vendedor</td>
+                        <td class="presentacion__contenido__tabla__cuerpo__fila__acciones">
+                            <a class="presentacion__contenido__tabla__cuerpo__fila__acciones__boton" href="empleadoDao.html">Editar</a>
+                        </td>
+                        <td><img class="presentacion__contenido__tabla__cuerpo__fila__imagen" src="images/nombre"></td>   
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+</body>
+</html>

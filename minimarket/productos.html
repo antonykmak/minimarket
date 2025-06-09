@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/estiloMenu.css">
+    <title>Document</title>
+</head>
+<body>
+    <header class="header">
+        <h1 class="header__titulo">CAMVELS</h1>
+    </header>
+    <main class="presentacion">
+        <section class="presentacion__menu">
+            <div class="presentacion__menu__paginas">
+                <a class="presentacion__menu__paginas__link" href="productos.html" >Productos</a>
+                <a class="presentacion__menu__paginas__link" href="ventas.html">Ventas</a>
+                <a class="presentacion__menu__paginas__link" href="compras.html">Compras</a>
+                <a class="presentacion__menu__paginas__link" href="empleados.html">Empleados</a>
+                <a class="presentacion__menu__paginas__link" href="proveedores.html">Proveedores</a>
+                <a class="presentacion__menu__paginas__link" href="reportes.html">Reportes</a>
+            </div>
+        </section>
+        <section class="presentacion__contenido">
+            <h2 class="presentacion__contenido__titulo">Lista de productos</h2>
+            <div class="presentacion__contenido__cabecera">
+                <a class="presentacion__contenido__cabecera__link" href="productoDao.html">Nuevo Producto</a>
+                <input type="text" class="presentacion__contenido__cabecera__buscador" placeholder="Buscar producto">
+            </div>    
+            <table class="presentacion__contenido__tabla">
+                <thead class="presentacion__contenido__tabla__encabezado">
+                    <tr class="presentacion__contenido__tabla__encabezado__fila">
+                        <th>Producto</th>
+                        <th>Categoría</th>
+                        <th>Stock</th>
+                        <th>Precio</th>
+                        <th>Acciones</th>
+                        <th>Imagen</th>
+                    </tr>
+                </thead>
+                <tbody class="presentacion__contenido__tabla__cuerpo">
+                    <tr class="presentacion__contenido__tabla__cuerpo__fila">
+                        <td>Leche Gloria Azul</td>
+                        <td>Lacteos</td>
+                        <td>12</td>
+                        <td>S/ 3.50</td>
+                        <td class="presentacion__contenido__tabla__cuerpo__fila__acciones">
+                            <a class="presentacion__contenido__tabla__cuerpo__fila__acciones__boton" href="productoDao.html">Editar</a>
+                            <a class="presentacion__contenido__tabla__cuerpo__fila__acciones__boton" href="#">Eliminar</a>
+                        </td>
+                        <td><img class="presentacion__contenido__tabla__cuerpo__fila__imagen" src="images/nombre"></td>
+                    </tr>
+                    <tr class="presentacion__contenido__tabla__cuerpo__fila">
+                        <td>Batimix</td>
+                        <td>Lacteos</td>
+                        <td>12</td>
+                        <td>S/ 4.60</td>
+                        <td class="presentacion__contenido__tabla__cuerpo__fila__acciones">
+                            <a class="presentacion__contenido__tabla__cuerpo__fila__acciones__boton" href="productoDao.html">Editar</a>
+                            <a class="presentacion__contenido__tabla__cuerpo__fila__acciones__boton" href="#">Eliminar</a>
+                        </td>
+                        <td><img class="presentacion__contenido__tabla__cuerpo__fila__imagen" src="images/nombre"></td>
+                    </tr>
+                    <tr class="presentacion__contenido__tabla__cuerpo__fila">
+                        <td>Pomarola</td>
+                        <td>Salsas</td>
+                        <td>20</td>
+                        <td>S/ 5.50</td>
+                        <td class="presentacion__contenido__tabla__cuerpo__fila__acciones">
+                            <a class="presentacion__contenido__tabla__cuerpo__fila__acciones__boton" href="productoDao.html">Editar</a>
+                            <a class="presentacion__contenido__tabla__cuerpo__fila__acciones__boton" href="#">Eliminar</a>
+                        </td>
+                        <td><img class="presentacion__contenido__tabla__cuerpo__fila__imagen" src="images/nombre"></td>
+                    </tr>   
+                    <tr class="presentacion__contenido__tabla__cuerpo__fila">
+                        <td>Ajinomen Gallina</td>
+                        <td>Pastas</td>
+                        <td>40</td>
+                        <td>S/ 4.00</td>
+                        <td class="presentacion__contenido__tabla__cuerpo__fila__acciones">
+                            <a class="presentacion__contenido__tabla__cuerpo__fila__acciones__boton" href="productoDao.html">Editar</a>
+                            <a class="presentacion__contenido__tabla__cuerpo__fila__acciones__boton" href="#">Eliminar</a>
+                        </td>
+                        <td><img class="presentacion__contenido__tabla__cuerpo__fila__imagen" src="images/nombre"></td>
+                    </tr>  
+                    <tr class="presentacion__contenido__tabla__cuerpo__fila">
+                        <td>Ajinomen Pollo</td>
+                        <td>Pastas</td>
+                        <td>40</td>
+                        <td>S/ 4.00</td>
+                        <td class="presentacion__contenido__tabla__cuerpo__fila__acciones">
+                            <a class="presentacion__contenido__tabla__cuerpo__fila__acciones__boton" href="productoDao.html">Editar</a>
+                            <a class="presentacion__contenido__tabla__cuerpo__fila__acciones__boton" href="#">Eliminar</a>
+                        </td>
+                        <td><img class="presentacion__contenido__tabla__cuerpo__fila__imagen" src="images/nombre"></td>
+                    </tr>
+                    <tr class="presentacion__contenido__tabla__cuerpo__fila">
+                        <td>Ajinomen Camarón</td>
+                        <td>Pastas</td>
+                        <td>40</td>
+                        <td>S/ 4.00</td>
+                        <td class="presentacion__contenido__tabla__cuerpo__fila__acciones">
+                            <a class="presentacion__contenido__tabla__cuerpo__fila__acciones__boton" href="productoDao.html">Editar</a>
+                            <a class="presentacion__contenido__tabla__cuerpo__fila__acciones__boton" href="#">Eliminar</a>
+                        </td>
+                        <td><img class="presentacion__contenido__tabla__cuerpo__fila__imagen" src="images/nombre"></td>
+                    </tr>
+                    <tr class="presentacion__contenido__tabla__cuerpo__fila">
+                        <td>Ajinomen Cerdo</td>
+                        <td>Pastas</td>
+                        <td>40</td>
+                        <td>S/ 4.00</td>
+                        <td class="presentacion__contenido__tabla__cuerpo__fila__acciones">
+                            <a class="presentacion__contenido__tabla__cuerpo__fila__acciones__boton" href="productoDao">Editar</a>
+                            <a class="presentacion__contenido__tabla__cuerpo__fila__acciones__boton" href="#">Eliminar</a>
+                        </td>
+                        <td><img class="presentacion__contenido__tabla__cuerpo__fila__imagen" src="images/nombre"></td> 
+                    </tr>
+                    <tr class="presentacion__contenido__tabla__cuerpo__fila">
+                        <td>Ajinomen Res</td>
+                        <td>Pastas</td>
+                        <td>40</td>
+                        <td>S/ 4.00</td>
+                        <td class="presentacion__contenido__tabla__cuerpo__fila__acciones">
+                            <a class="presentacion__contenido__tabla__cuerpo__fila__acciones__boton" href="productoDao.html">Editar</a>
+                            <a class="presentacion__contenido__tabla__cuerpo__fila__acciones__boton" href="#">Eliminar</a>
+                        </td>
+                        <td><img class="presentacion__contenido__tabla__cuerpo__fila__imagen" src="images/nombre"></td>
+                    </tr>
+                    <tr class="presentacion__contenido__tabla__cuerpo__fila">
+                        <td>Ajinomen Pescado</td>
+                        <td>Pastas</td>
+                        <td>40</td>
+                        <td>S/ 4.00</td>
+                        <td class="presentacion__contenido__tabla__cuerpo__fila__acciones">
+                            <a class="presentacion__contenido__tabla__cuerpo__fila__acciones__boton" href="productoDao.html">Editar</a>
+                            <a class="presentacion__contenido__tabla__cuerpo__fila__acciones__boton" href="#">Eliminar</a>
+                        </td>
+                        <td><img class="presentacion__contenido__tabla__cuerpo__fila__imagen" src="images/nombre"></td>
+                </tbody>
+            </table>
+        </section>
+    </main>
+</body>
+</html>
