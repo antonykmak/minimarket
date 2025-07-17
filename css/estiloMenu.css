@@ -1,0 +1,312 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --color-primario: #ffffff;
+    --color-letra: #000000;
+    /*--color-titulo-menu: #4E71FF;*/
+    --color-secundario-menu: #000000;
+    --color-secundario-contenido: #c0e1ee;
+    --color-terciario: #ffffff;
+    --color-advertencia: #c73131;
+    --color-accion: #0027c4;
+    --color-hover: #f79cff;
+
+    --fuente-montserrat: "Montserrat", sans-serif;
+    --fuente-krona: "Krona One", sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #88b7fd;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.header__titulo {
+    font-family: var(--fuente-montserrat);
+    font-size: 3.5rem;
+    color: var(--color-letra);
+    text-align: center;
+}
+
+.header__cerrar {
+    background-color: #fff;
+    color: var(--color-letra);
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 0.25rem;
+    font-weight: bold;
+}
+
+.header__cerrar:hover {
+    background-color: var(--color-advertencia);
+}
+
+.presentacion {
+    display: flex;
+    height: 100vh;
+}
+
+.presentacion__menu {
+    flex: 0 0 15%;
+    padding: 10px;
+    background-color: var(--color-secundario-menu);
+}
+
+.presentacion__menu__paginas {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.presentacion__menu__paginas__link {
+    font-family: var(--fuente-montserrat);
+    font-size: 1.5rem;
+    color: var(--color-terciario);
+    text-decoration: none;
+    text-align: center;
+    padding: 5px;
+    font-weight: bold;
+}
+
+.presentacion__menu__paginas__link:hover {
+    color: var(--color-hover);
+    background-color: var(--color-terciario);
+}
+
+.presentacion__contenido {
+    flex: 0 0 83.4%;
+    background-color: var(--color-secundario-contenido);
+    border: #666666 1px solid;
+}
+
+.presentacion__contenido__titulo {
+    font-family: var(--fuente-montserrat);
+    font-size: 2.5rem;
+    color: var(--color-letra);
+    text-align: center;
+}
+
+.presentacion__contenido__cabecera {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px;
+}
+
+.presentacion__contenido__cabecera__link {
+    font-family: var(--fuente-montserrat);
+    font-size: 0.8rem;
+    color: var(--color-terciario);
+    text-decoration: none;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: var(--color-secundario-menu);
+}
+
+.presentacion__contenido__cabecera__link:hover {
+    color: var(--color-terciario);
+    background-color: var(--color-accion);
+}
+
+.presentacion__contenido__cabecera__buscador {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    background-color: var(--color-terciario);
+    border-radius: 10px;
+
+}
+
+.presentacion__contenido__cabecera__buscador__input {
+    border: none;
+    font-family: var(--fuente-montserrat);
+    font-size: 1rem;
+    padding: 5px;
+    width: 200px;
+}
+
+.presentacion__contenido__tabla {
+    margin: 0 auto;
+    display: table;
+    width: 95%;
+    padding: 10px;
+    background-color: var(--color-primario);
+    border-radius: 10px;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.presentacion__contenido__card {
+    display: flex;
+    flex-direction: column;
+    vertical-align: center;
+    background-color: var(--color-secundario-contenido);
+    border-radius: 10px;
+}
+
+.presentacion__contenido__card__tabla {
+    margin: 0 auto;
+    display: table;
+    width: 50%;
+    padding: 10px;
+    background-color: var(--color-primario);
+    border-radius: 10px;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.presentacion__contenido__card__tabla__fila {
+    font-family: var(--fuente-montserrat);
+    font-size: 1.5rem;
+    color: var(--color-letra);
+    text-align: center;
+}
+
+.presentacion__contenido__card__tabla__fila td,
+th {
+    padding: 10px;
+}
+
+.presentacion__contenido__card__tabla__fila__select {
+    padding: 8px;
+    height: 100%;
+    width: 100%;
+    font-size: 16px;
+    border: 1px solid var(--color-letra);
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.presentacion__contenido__card__tabla__fila__boton {
+    width: 40%;
+    font-size: 1.5rem;
+    padding: 5px;
+    border-radius: 10px;
+    vertical-align: center;
+    background-color: var(--color-secundario-menu);
+    color: var(--color-terciario);
+}
+
+.presentacion__contenido__card__tabla__fila__boton:hover {
+    color: var(--color-terciario);
+    background-color: var(--color-accion);
+}
+
+.presentacion__contenido__tabla__encabezado {
+    font-family: var(--fuente-montserrat);
+    color: var(--color-letra);
+    text-align: center;
+    border: var(--color-secundario-menu) 1px solid;
+}
+
+.presentacion__contenido__tabla__encabezado__fila {
+    font-family: var(--fuente-montserrat);
+    font-size: 1.5rem;
+    color: var(--color-letra);
+    text-align: center;
+}
+
+.presentacion__contenido__tabla__cuerpo {
+    font-family: var(--fuente-montserrat);
+    font-size: 1.5rem;
+    color: var(--color-letra);
+    text-align: center;
+}
+
+.presentacion__contenido__tabla__cuerpo__fila {
+    font-family: var(--fuente-montserrat);
+    font-size: 1.2rem;
+    color: var(--color-letra);
+    border: var(--color-secundario-menu) 1px solid;
+}
+
+.presentacion__contenido__tabla__cuerpo__fila:hover {
+    background-color: var(--color-terciario);
+}
+
+.presentacion__contenido__tabla__cuerpo__fila__acciones {
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.presentacion__contenido__tabla__cuerpo__fila__acciones__boton {
+    font-family: var(--fuente-montserrat);
+    font-size: 0.8rem;
+    color: var(--color-terciario);
+    padding: 10px;
+    border-radius: 10px;
+    background-color: var(--color-secundario-menu);
+    text-decoration: none;
+}
+
+.presentacion__contenido__tabla__cuerpo__fila__acciones__boton:hover {
+    color: var(--color-terciario);
+    background-color: var(--color-advertencia);
+}
+
+.presentacion__contenido__tabla__cuerpo__fila__acciones__añadir {
+    font-family: var(--fuente-montserrat);
+    font-size: 0.8rem;
+    color: var(--color-terciario);
+    padding: 10px;
+    border-radius: 10px;
+    background-color: var(--color-secundario-menu);
+    text-decoration: none;
+}
+
+.presentacion__contenido__tabla__cuerpo__fila__acciones__añadir:hover {
+    color: var(--color-terciario);
+    background-color: var(--color-accion);
+}
+
+.presentacion__contenido__card__tabla__fila input {
+    width: 100%;
+    padding: 8px;
+    height: 36px;
+    font-size: 16px;
+    border: 1px solid var(--color-letra);
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.presentacion__contenido__card__tabla__fila__a {
+    padding: 10px;
+}
+
+.presentacion__contenido__tabla__cuerpo__fila__total {
+    font-size: 2rem;
+}
+
+.presentacion__contenido__tabla__cuerpo__boton {
+    padding: 15px;
+}
+
+.presentacion__contenido__tabla__cuerpo__fila__boton__a {
+    font-family: var(--fuente-montserrat);
+    font-size: 1.5rem;
+    color: var(--color-terciario);
+    padding: 10px;
+    border-radius: 10px;
+    background-color: var(--color-secundario-menu);
+    text-decoration: none;
+    width: 40%;
+}
+
+.presentacion__contenido__tabla__cuerpo__fila__boton__a:hover {
+    color: var(--color-terciario);
+    background-color: var(--color-accion);
+}
