@@ -1,42 +1,82 @@
 <?php
 require_once __DIR__ . '/../bd/conexion.php';
-require_once __DIR__ . '/../dao/usuarioDAO.php';
+require_once __DIR__ . '/../dao/UsuarioDAO.php';
+require_once __DIR__ . '/../repository/UsuarioRepository.php';
+require_once __DIR__ . '/../dto/UsuarioDTO.php';
 require_once __DIR__ . '/../dto/UsuarioCreacionDTO.php';
 
+$repo = new UsuarioRepository(new UsuarioDAO($pdo));
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $nombre = trim($_POST['nombre']);
-    $dni = trim($_POST['dni']);
-    $usuario = trim($_POST['usuario']);
-    $contrasena = trim($_POST['contrasena']);
-    $rol = trim($_POST['rol']);
+$id        = $_POST['id'] ?? null;
+$nombre    = trim($_POST['nombre'] ?? '');
+$dni       = trim($_POST['dni'] ?? '');
+$user = trim($_POST['usuario'] ?? '');
+$rol       = trim($_POST['rol'] ?? '');
+$contrasena = trim($_POST['contrasena'] ?? '');
+$confirmar  = trim($_POST['confirmar_contrasena'] ?? '');
 
-
-    // Validación de contraseña segura
-    if (!preg_match('/^(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{12,}$/', $contrasena)) {
-        echo "<script>alert('La contraseña debe tener al menos 12 caracteres, una mayúscula, un número y un carácter especial.'); window.history.back();</script>";
+if (!empty($id) && $contrasena === '') {
+    $hash = null;
+} else {
+    if ($contrasena !== $confirmar) {
+        echo "<script>
+                alert('Las contraseñas no coinciden');
+                window.history.back();
+              </script>";
         exit;
     }
-
-    // Hashear la contraseña
+    if (!preg_match(
+        '/^(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{12,}$/',
+        $contrasena
+    )) {
+        echo "<script>
+                alert('La contraseña debe tener al menos 12 caracteres, una mayúscula, un número y un carácter especial.');
+                window.history.back();
+              </script>";
+        exit;
+    }
     $hash = password_hash($contrasena, PASSWORD_DEFAULT);
+}
 
-    // Crear DTO de usuario
-    $nuevoUsuario = new UsuarioCreacionDTO($nombre, $dni, $usuario, $hash, $rol, true);
-
-    // Insertar en la BD
-    $dao = new UsuarioDAO($pdo);
-
-    if ($dao->existeUsuario($usuario)) {
-        echo "<script>alert('El usuario ya existe'); window.history.back();</script>";
-        exit;
+if ($id) {
+    if ($hash === null) {
+        $oldDTO = $repo->buscarPorId((int)$id);
+        if (!$oldDTO) {
+            die('Usuario no encontrado');
+        }
+        $hash = $oldDTO->contrasena;
     }
 
-    $resultado = $dao->crearUsuario($nuevoUsuario);
+    $dto = new UsuarioDTO(
+        (int)$id,
+        $nombre,
+        $dni,
+        $user,
+        $hash,
+        $rol,
+        true
+    );
+    $ok = $repo->modificar($dto);
+} else {
+    $dto = new UsuarioCreacionDTO(
+        $nombre,
+        $dni,
+        $user,
+        $hash,
+        $rol,
+        true
+    );
+    $ok = $repo->crear($dto);
+}
 
-    if ($resultado) {
-        echo "<script>alert('Usuario registrado correctamente'); window.location.href = '/../menu.php';</script>";
-    } else {
-        echo "<script>alert('Error al registrar usuario'); window.history.back();</script>";
-    }
+if ($ok) {
+    echo "<script>
+            alert('Usuario " . ($id ? 'actualizado' : 'registrado') . " correctamente');
+            window.location.href = '/minimarket2025/empleados.php';
+          </script>";
+} else {
+    echo "<script>
+            alert('Error al " . ($id ? 'actualizar' : 'registrar') . " el usuario');
+            window.history.back();
+          </script>";
 }

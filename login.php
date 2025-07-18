@@ -17,7 +17,7 @@ include __DIR__ . '/controlador/UsuarioLogin.php'; ?>
     <main class="login">
         <h2>Minimarket Camvels</h2>
         <form id="login" action="" method="post">
-            <input type="text" name="usu" placeholder="Usuario" id="usuario" required>
+            <input type="text" name="usu" placeholder="Usuario" id="usuario" autocomplete="off" required>
             <input type="password" name="clave" placeholder="Contraseña" id="pass" required>
             <button type="submit">Iniciar sesion</button>
         </form>

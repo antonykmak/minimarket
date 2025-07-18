@@ -1,9 +1,3 @@
-<?php
-    session_start();
-    if(!isset($_SESSION['usuario']))
-        header("Location:login.php");           
-?>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -15,7 +9,6 @@
 <body>
     <header class="header">
         <h1 class="header__titulo">CAMVELS</h1>
-        <a href="cerrar.php" class="header__cerrar">Cerrar sesión</a>
     </header>
     <main class="presentacion">
         <section class="presentacion__menu">
